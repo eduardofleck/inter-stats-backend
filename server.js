@@ -7,6 +7,7 @@ const app = express();
 
 const options = {
   origin: process.env.CORS,
+  credentials: true,
 };
 
 app.use(cors(options));
@@ -23,7 +24,6 @@ app.use(
     appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
     showErrorStack: "json",
     extendedErrors: ["hint", "detail", "errcode"],
-    enableCors: true,
   })
 );
 
