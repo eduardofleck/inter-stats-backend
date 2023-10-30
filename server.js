@@ -26,7 +26,11 @@ app.use(
     appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
     showErrorStack: "json",
     extendedErrors: ["hint", "detail", "errcode"],
-    force_ssl: true,
+    pgSettings(req) {
+      ssl: {
+        rejectUnauthorized: false;
+      }
+    },
   })
 );
 
