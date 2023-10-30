@@ -21,7 +21,6 @@ app.use(
   postgraphile(process.env.POSTGRES_URI, "public", {
     graphiql: true,
     subscriptions: true,
-    retryOnInitFail: true,
     enhanceGraphiql: true,
     disableDefaultMutations: true,
     appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
