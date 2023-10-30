@@ -15,6 +15,8 @@ app.use(cors(options));
 // Enable pre-flight requests for all routes
 app.options("*", cors(options));
 
+console.log(`Postgres URI ${process.env.POSTGRES_URI}`);
+
 app.use(
   postgraphile(process.env.POSTGRES_URI, "public", {
     watchPg: true,
