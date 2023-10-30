@@ -27,7 +27,9 @@ app.use(
     showErrorStack: "json",
     extendedErrors: ["hint", "detail", "errcode"],
     pgSettings: async (req) => ({
-      ssl: "rejectUnauthorized: false",
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
   })
 );
