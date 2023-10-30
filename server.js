@@ -27,11 +27,9 @@ app.use(
     showErrorStack: "json",
     extendedErrors: ["hint", "detail", "errcode"],
     pgSettings(req) {
-     return (
-        { ssl: {
-        rejectUnauthorized: false;
-      }
-    });
+      return {
+        ssl: { rejectUnauthorized: false },
+      };
     },
   })
 );
