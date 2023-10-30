@@ -19,8 +19,9 @@ console.log(`Postgres URI ${process.env.POSTGRES_URI}`);
 
 app.use(
   postgraphile(process.env.POSTGRES_URI, "public", {
-    watchPg: true,
     graphiql: true,
+    subscriptions: true,
+    retryOnInitFail: true,
     enhanceGraphiql: true,
     disableDefaultMutations: true,
     appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
