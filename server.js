@@ -23,6 +23,7 @@ app.use(
     appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
     showErrorStack: "json",
     extendedErrors: ["hint", "detail", "errcode"],
+    enableCors: true,
   })
 );
 
