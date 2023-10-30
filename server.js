@@ -16,7 +16,7 @@ app.use(cors(options));
 app.options("*", cors(options));
 
 app.use(
-  postgraphile(process.env.DATABASE_URL, "public", {
+  postgraphile(process.env.POSTGRES_URI, "public", {
     watchPg: true,
     graphiql: true,
     enhanceGraphiql: true,
@@ -24,6 +24,7 @@ app.use(
     appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
     showErrorStack: "json",
     extendedErrors: ["hint", "detail", "errcode"],
+    force_ssl: true,
   })
 );
 
